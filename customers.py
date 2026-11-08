@@ -14,3 +14,17 @@ print(customer["ytd_spend"])
 
 # Print the whole dictionary
 print(customer)
+
+# Exercise 2
+
+# Add a phone field
+customer["phone"] = "813-555-0199"
+print(customer)
+
+# Update the tier to "platinum"
+customer["tier"] = "platinum"
+print(customer)
+
+# Delete the email field with del
+del customer["email"]
+print(customer)
