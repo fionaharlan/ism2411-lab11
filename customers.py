@@ -1,3 +1,7 @@
+# 1. Bracket notation will crash a program if the key does not exist. this is good for debugging because it will show exactly where the error is. .get() gives you a backup value instead of crashing, which is better for optional or messier data.
+# 2. The pattern reminds me of an Excel PivotTable, where you can summarize data by categories. Python handles bigger datasets faster and more efficiently than excel without making you drag formulas across a spreadsheet.
+
+
 # Exercise 1
 customer = {
     "name": "Khloe Acker",
@@ -108,3 +112,23 @@ for product, details in catalog.items():
         print(f"LOW STOCK ALERT: {product} only has {stock_level} units left")
     else:
         print(f"{product} has enough stock.")
+
+# exercise 8
+
+transactions = [
+    {"region": "South", "amount": 300}, 
+    {"region": "North", "amount": 150}, 
+    {"region": "South", "amount": 200}
+]
+
+regional_sales = {}
+
+for tx in transactions:
+    region = tx["region"]
+    amount = tx["amount"]
+    
+    regional_sales[region] = regional_sales.get(region, 0) + amount
+
+print("Sales Summary by Region:")
+for region in sorted(regional_sales.keys()):
+    print(f"{region}: {regional_sales[region]}")
