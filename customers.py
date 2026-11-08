@@ -38,3 +38,18 @@ try:
     print(customer["email"])
 except KeyError:
     print("KeyError caught: 'email' key does not exist in this dictionary.")
+
+# exercise 4
+
+customer = {
+    "name": "Alice Smith",
+    "tier": "platinum",
+    "ytd_spend": 1250.50,
+    "phone": "813-555-0199"
+}
+
+# Iterate using .items() to get both key and value
+for key, value in customer.items():
+    print(f"{key}: {value}")
+
+# If you loop through a dictionary without .items(), python only iterates over the dictionary's keys. To get the values, you would have to use brackets inside the loop. Using `.items()` is cleaner because it gives you both the key and the value at the same time
