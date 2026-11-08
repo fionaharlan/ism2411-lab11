@@ -28,3 +28,13 @@ print(customer)
 # Delete the email field with del
 del customer["email"]
 print(customer)
+
+# Exercise 3
+
+email_result = customer.get("email", "no email on file")
+print(email_result)
+
+try:
+    print(customer["email"])
+except KeyError:
+    print("KeyError caught: 'email' key does not exist in this dictionary.")
