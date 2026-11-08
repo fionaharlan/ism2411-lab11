@@ -6,26 +6,21 @@ customer = {
     "ytd_spend": 1250.50
 }
 
-# Print each field individually using key access
 print(customer["name"])
 print(customer["email"])
 print(customer["tier"])
 print(customer["ytd_spend"])
 
-# Print the whole dictionary
 print(customer)
 
 # Exercise 2
 
-# Add a phone field
 customer["phone"] = "813-555-0199"
 print(customer)
 
-# Update the tier to "platinum"
 customer["tier"] = "platinum"
 print(customer)
 
-# Delete the email field with del
 del customer["email"]
 print(customer)
 
@@ -70,16 +65,13 @@ customer = {
     "phone": "813-555-0199"
 }
 
-# Look up discount rate using .get() with a default of 0
 tier = customer.get("tier", "bronze")
 discount_rate = tier_discounts.get(tier, 0)
 
-# Compute discounted price for a $200 purchase
 original_price = 200.00
 discount = original_price * discount_rate
 final_price = original_price - discount
 
-# Print the tier, discount rate, and final price
 print(f"Tier: {tier}")
 print(f"Discount Rate: {discount_rate * 100}%")
 print(f"Final Price for $200 purchase: ${final_price:.2f}")
@@ -94,10 +86,25 @@ customers = [
 
 purchase_amount = 300.00
 
-# Loop through each customer and calculate their discount
 for customer in customers:
     tier = customer.get("tier", "bronze")
     discount_rate = tier_discounts.get(tier, 0)
     discount = purchase_amount * discount_rate
     
     print(f"Name: {customer['name']} | Tier: {tier.capitalize()} | Discount on ${purchase_amount:.2f}: ${discount:.2f}")
+
+# exercise 7 
+
+catalog = {
+    "Widget A": {"price": 9.99, "stock": 150},
+    "Gadget C": {"price": 49.99, "stock": 8}
+}
+
+for product, details in catalog.items():
+    stock_level = details["stock"]
+    
+ 
+    if stock_level < 20:
+        print(f"LOW STOCK ALERT: {product} only has {stock_level} units left")
+    else:
+        print(f"{product} has enough stock.")
